@@ -25,7 +25,7 @@ struct ResultsManager {
         baseUrlString = "https://api.nutritionix.com/v1_1/search/"
         baseUrlString! += "\(foodName)?"
         var urlString = baseUrlString?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        urlString! += "results=0:30"
+        urlString! += "results=0:50"
         urlString! += "&fields=item_name,brand_name,item_id,nf_calories,nf_protein,nf_total_carbohydrate,nf_total_fat,nf_serving_weight_grams"
         urlString! += "&appId=\(appID)"
         urlString! += "&appKey=\(appKey)"

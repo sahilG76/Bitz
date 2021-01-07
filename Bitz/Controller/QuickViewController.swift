@@ -39,10 +39,19 @@ class QuickViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToTemp" {
+//            // Get the new view controller using segue.destination.
+//            let destinationVC = segue.destination as! TempViewController
+//            // Pass the selected object to the new view controller.
+//            destinationVC.results = searchResults
+//            destinationVC.currentTitle = searchTitle
+//        }
+//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToTemp" {
+        if segue.identifier == "goToSearch" {
             // Get the new view controller using segue.destination.
-            let destinationVC = segue.destination as! TempViewController
+            let destinationVC = segue.destination as! SearchViewController
             // Pass the selected object to the new view controller.
             destinationVC.results = searchResults
             destinationVC.currentTitle = searchTitle
@@ -100,7 +109,9 @@ extension QuickViewController: ResultsManagerDelegate {
         print(results.foods)
         searchResults = results
         DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "goToTemp", sender: self)
+//            self.performSegue(withIdentifier: "goToTemp", sender: self)
+            self.performSegue(withIdentifier: "goToSearch", sender: self)
+
         }
     }
     

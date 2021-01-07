@@ -97,10 +97,10 @@
 			children = (
 				D819F3B6246F843D009D1DF4 /* QuickViewController.swift */,
 				D89852F924E8CE320086664E /* TempViewController.swift */,
-				D8BE578124E479AD00ED5401 /* LogRegViewController.swift */,
-				D8BE578324E47D6B00ED5401 /* LibraryViewController.swift */,
 				D8BE578524E47D9900ED5401 /* SearchViewController.swift */,
 				D8BE578724E47DBA00ED5401 /* NutrientViewController.swift */,
+				D8BE578124E479AD00ED5401 /* LogRegViewController.swift */,
+				D8BE578324E47D6B00ED5401 /* LibraryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

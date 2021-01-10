@@ -8,17 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		D819F3B5246F843D009D1DF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819F3B4246F843D009D1DF4 /* AppDelegate.swift */; };
-		D819F3B7246F843D009D1DF4 /* QuickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819F3B6246F843D009D1DF4 /* QuickViewController.swift */; };
+		D819F3B7246F843D009D1DF4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819F3B6246F843D009D1DF4 /* SearchViewController.swift */; };
 		D819F3BA246F843D009D1DF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D819F3B8246F843D009D1DF4 /* Main.storyboard */; };
 		D819F3BC246F843F009D1DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D819F3BB246F843F009D1DF4 /* Assets.xcassets */; };
 		D819F3BF246F843F009D1DF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D819F3BD246F843F009D1DF4 /* LaunchScreen.storyboard */; };
+		D852304025AAA10D0089D68B /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852303F25AAA10D0089D68B /* FoodModel.swift */; };
 		D89852F624E8BC630086664E /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89852F524E8BC630086664E /* ResultsModel.swift */; };
 		D89852F824E8BCC60086664E /* ResultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89852F724E8BCC60086664E /* ResultsManager.swift */; };
 		D89852FA24E8CE320086664E /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89852F924E8CE320086664E /* TempViewController.swift */; };
+		D8B04C9B25A80B46006A28C5 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B04C9925A80B46006A28C5 /* ResultCell.swift */; };
+		D8B04C9C25A80B46006A28C5 /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B04C9A25A80B46006A28C5 /* ResultCell.xib */; };
 		D8BBEF4024D0BA63003AF27A /* white_granite.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8BBEF3F24D0BA63003AF27A /* white_granite.pdf */; };
 		D8BE578224E479AD00ED5401 /* LogRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE578124E479AD00ED5401 /* LogRegViewController.swift */; };
 		D8BE578424E47D6B00ED5401 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE578324E47D6B00ED5401 /* LibraryViewController.swift */; };
-		D8BE578624E47D9900ED5401 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE578524E47D9900ED5401 /* SearchViewController.swift */; };
+		D8BE578624E47D9900ED5401 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE578524E47D9900ED5401 /* ResultsViewController.swift */; };
 		D8BE578824E47DBA00ED5401 /* NutrientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE578724E47DBA00ED5401 /* NutrientViewController.swift */; };
 		D8BE579424E72A5400ED5401 /* ResultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BE579324E72A5400ED5401 /* ResultsData.swift */; };
 /* End PBXBuildFile section */
@@ -26,18 +29,21 @@
 /* Begin PBXFileReference section */
 		D819F3B1246F843D009D1DF4 /* Bitz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bitz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D819F3B4246F843D009D1DF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D819F3B6246F843D009D1DF4 /* QuickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickViewController.swift; sourceTree = "<group>"; };
+		D819F3B6246F843D009D1DF4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D819F3B9246F843D009D1DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D819F3BB246F843F009D1DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D819F3BE246F843F009D1DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D819F3C0246F843F009D1DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D852303F25AAA10D0089D68B /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
 		D89852F524E8BC630086664E /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 		D89852F724E8BCC60086664E /* ResultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsManager.swift; sourceTree = "<group>"; };
 		D89852F924E8CE320086664E /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		D8B04C9925A80B46006A28C5 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		D8B04C9A25A80B46006A28C5 /* ResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCell.xib; sourceTree = "<group>"; };
 		D8BBEF3F24D0BA63003AF27A /* white_granite.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = white_granite.pdf; sourceTree = SOURCE_ROOT; };
 		D8BE578124E479AD00ED5401 /* LogRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRegViewController.swift; sourceTree = "<group>"; };
 		D8BE578324E47D6B00ED5401 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
-		D8BE578524E47D9900ED5401 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D8BE578524E47D9900ED5401 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		D8BE578724E47DBA00ED5401 /* NutrientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientViewController.swift; sourceTree = "<group>"; };
 		D8BE579324E72A5400ED5401 /* ResultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,9 +101,9 @@
 		D8BBEF3B24D0B6CD003AF27A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D819F3B6246F843D009D1DF4 /* QuickViewController.swift */,
+				D819F3B6246F843D009D1DF4 /* SearchViewController.swift */,
 				D89852F924E8CE320086664E /* TempViewController.swift */,
-				D8BE578524E47D9900ED5401 /* SearchViewController.swift */,
+				D8BE578524E47D9900ED5401 /* ResultsViewController.swift */,
 				D8BE578724E47DBA00ED5401 /* NutrientViewController.swift */,
 				D8BE578124E479AD00ED5401 /* LogRegViewController.swift */,
 				D8BE578324E47D6B00ED5401 /* LibraryViewController.swift */,
@@ -111,6 +117,7 @@
 				D8BE579324E72A5400ED5401 /* ResultsData.swift */,
 				D89852F524E8BC630086664E /* ResultsModel.swift */,
 				D89852F724E8BCC60086664E /* ResultsManager.swift */,
+				D852303F25AAA10D0089D68B /* FoodModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				D819F3B8246F843D009D1DF4 /* Main.storyboard */,
+				D8B04C9925A80B46006A28C5 /* ResultCell.swift */,
+				D8B04C9A25A80B46006A28C5 /* ResultCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +194,7 @@
 				D819F3BC246F843F009D1DF4 /* Assets.xcassets in Resources */,
 				D819F3BA246F843D009D1DF4 /* Main.storyboard in Resources */,
 				D8BBEF4024D0BA63003AF27A /* white_granite.pdf in Resources */,
+				D8B04C9C25A80B46006A28C5 /* ResultCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,9 +206,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89852F624E8BC630086664E /* ResultsModel.swift in Sources */,
-				D8BE578624E47D9900ED5401 /* SearchViewController.swift in Sources */,
-				D819F3B7246F843D009D1DF4 /* QuickViewController.swift in Sources */,
+				D8BE578624E47D9900ED5401 /* ResultsViewController.swift in Sources */,
+				D819F3B7246F843D009D1DF4 /* SearchViewController.swift in Sources */,
+				D852304025AAA10D0089D68B /* FoodModel.swift in Sources */,
 				D8BE578224E479AD00ED5401 /* LogRegViewController.swift in Sources */,
+				D8B04C9B25A80B46006A28C5 /* ResultCell.swift in Sources */,
 				D8BE578824E47DBA00ED5401 /* NutrientViewController.swift in Sources */,
 				D8BE579424E72A5400ED5401 /* ResultsData.swift in Sources */,
 				D89852FA24E8CE320086664E /* TempViewController.swift in Sources */,

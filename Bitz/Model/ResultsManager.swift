@@ -68,7 +68,8 @@ struct ResultsManager {
                     gramsProtein: hit.fields.nf_protein,
                     gramsCarbs: hit.fields.nf_total_carbohydrate,
                     gramsFat: hit.fields.nf_total_fat,
-                    gramsPerServing: "No Available Serving Mass"))
+                    gramsPerServing: "No Available Serving Mass",
+                    grams: 0))
                 }
                 else{
                     foods.append(Food(name: hit.fields.item_name,
@@ -77,7 +78,8 @@ struct ResultsManager {
                     gramsProtein: hit.fields.nf_protein,
                     gramsCarbs: hit.fields.nf_total_carbohydrate,
                     gramsFat: hit.fields.nf_total_fat,
-                    gramsPerServing: String(hit.fields.nf_serving_weight_grams!)))
+                    gramsPerServing: String(hit.fields.nf_serving_weight_grams!),
+                    grams: hit.fields.nf_serving_weight_grams!))
                 }
             }
             let resultsObj = ResultsModel(foods: foods)

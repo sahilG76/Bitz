@@ -26,6 +26,7 @@ class NutrientViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         updateLabels(i: index!)
+        
     }
     
     func updateLabels(i: Int) {
@@ -36,6 +37,10 @@ class NutrientViewController: UIViewController {
         carbsLabel.text = "Carbs(g): " + String(format: "%.0f", results?.foods[i].gramsCarbs as! CVarArg)
         fatLabel.text = "Total Fat(g): " + String(format: "%.0f", results?.foods[i].gramsFat as! CVarArg)
         servingLabel.text = "grams/serving: " + (results?.foods[i].gramsPerServing)!
+    }
+    
+    func updateLabels(food: CustomFoodModel) {
+        
     }
     
 

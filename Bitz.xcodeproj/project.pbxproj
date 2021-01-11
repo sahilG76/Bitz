@@ -12,7 +12,8 @@
 		D819F3BA246F843D009D1DF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D819F3B8246F843D009D1DF4 /* Main.storyboard */; };
 		D819F3BC246F843F009D1DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D819F3BB246F843F009D1DF4 /* Assets.xcassets */; };
 		D819F3BF246F843F009D1DF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D819F3BD246F843F009D1DF4 /* LaunchScreen.storyboard */; };
-		D852304025AAA10D0089D68B /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852303F25AAA10D0089D68B /* FoodModel.swift */; };
+		D852304025AAA10D0089D68B /* CustomFoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D852303F25AAA10D0089D68B /* CustomFoodModel.swift */; };
+		D85685F925ABEE3700D6DBA3 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85685F825ABEE3700D6DBA3 /* Food.swift */; };
 		D89852F624E8BC630086664E /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89852F524E8BC630086664E /* ResultsModel.swift */; };
 		D89852F824E8BCC60086664E /* ResultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89852F724E8BCC60086664E /* ResultsManager.swift */; };
 		D89852FA24E8CE320086664E /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89852F924E8CE320086664E /* TempViewController.swift */; };
@@ -34,7 +35,8 @@
 		D819F3BB246F843F009D1DF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D819F3BE246F843F009D1DF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D819F3C0246F843F009D1DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D852303F25AAA10D0089D68B /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
+		D852303F25AAA10D0089D68B /* CustomFoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFoodModel.swift; sourceTree = "<group>"; };
+		D85685F825ABEE3700D6DBA3 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		D89852F524E8BC630086664E /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 		D89852F724E8BCC60086664E /* ResultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsManager.swift; sourceTree = "<group>"; };
 		D89852F924E8CE320086664E /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
@@ -116,8 +118,9 @@
 			children = (
 				D8BE579324E72A5400ED5401 /* ResultsData.swift */,
 				D89852F524E8BC630086664E /* ResultsModel.swift */,
+				D85685F825ABEE3700D6DBA3 /* Food.swift */,
 				D89852F724E8BCC60086664E /* ResultsManager.swift */,
-				D852303F25AAA10D0089D68B /* FoodModel.swift */,
+				D852303F25AAA10D0089D68B /* CustomFoodModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,12 +211,13 @@
 				D89852F624E8BC630086664E /* ResultsModel.swift in Sources */,
 				D8BE578624E47D9900ED5401 /* ResultsViewController.swift in Sources */,
 				D819F3B7246F843D009D1DF4 /* SearchViewController.swift in Sources */,
-				D852304025AAA10D0089D68B /* FoodModel.swift in Sources */,
+				D852304025AAA10D0089D68B /* CustomFoodModel.swift in Sources */,
 				D8BE578224E479AD00ED5401 /* LogRegViewController.swift in Sources */,
 				D8B04C9B25A80B46006A28C5 /* ResultCell.swift in Sources */,
 				D8BE578824E47DBA00ED5401 /* NutrientViewController.swift in Sources */,
 				D8BE579424E72A5400ED5401 /* ResultsData.swift in Sources */,
 				D89852FA24E8CE320086664E /* TempViewController.swift in Sources */,
+				D85685F925ABEE3700D6DBA3 /* Food.swift in Sources */,
 				D89852F824E8BCC60086664E /* ResultsManager.swift in Sources */,
 				D8BE578424E47D6B00ED5401 /* LibraryViewController.swift in Sources */,
 				D819F3B5246F843D009D1DF4 /* AppDelegate.swift in Sources */,

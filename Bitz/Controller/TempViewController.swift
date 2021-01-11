@@ -40,7 +40,7 @@ class TempViewController: UIViewController {
         proteinLabel.text = "Protein(g): " + String(format: "%.0f", results?.foods[i].gramsProtein as! CVarArg)
         carbsLabel.text = "Carbs(g): " + String(format: "%.0f", results?.foods[i].gramsCarbs as! CVarArg)
         fatLabel.text = "Total Fat(g): " + String(format: "%.0f", results?.foods[i].gramsFat as! CVarArg)
-        servingLabel.text = "grams/serving: " + (results?.foods[i].gramsPerServing)!
+        servingLabel.text = "grams/serving: " + String(format: "%.0f", results?.foods[i].gramsPerServing as! CVarArg)
         resultNumLabel.text = "Showing Result \(i+1)/\(results!.foods.count)"
     }
     

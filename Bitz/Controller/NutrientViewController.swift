@@ -105,12 +105,12 @@ class NutrientViewController: UIViewController, UIPickerViewDataSource, UIPicker
 //MARK: -UITextFieldDelegate
 extension NutrientViewController: UITextFieldDelegate {
     
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-////        self.view.endEditing(true)
-////        return false
-//    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+//        self.view.endEditing(true)
+//        return false
+    }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {

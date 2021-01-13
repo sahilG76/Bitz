@@ -27,6 +27,7 @@ class SearchViewController: UIViewController {
         // Do any additional setup after loading the view.
         foodsManager.delegate = self
         setCreditLinkText()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +70,8 @@ class SearchViewController: UIViewController {
         creditTextView.isUserInteractionEnabled = true
         creditTextView.isEditable = false
         creditTextView.attributedText = fullAttributedString
+        creditTextView.centerXAnchor.constraint(equalTo: (creditTextView.superview?.centerXAnchor)!).isActive = true
+        creditTextView.textAlignment = .center
     }
     
 }

@@ -76,8 +76,9 @@
                                 <color key="tintColor" name="TitlesNIcons"/>
                                 <state key="normal" title="Login/Register"/>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXz-TP-kvu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXz-TP-kvu">
                                 <rect key="frame" x="93.666666666666686" y="792" width="203" height="40"/>
+                                <color key="tintColor" name="TitlesNIcons"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3Cs-tM-evL"/>
                                     <constraint firstAttribute="width" constant="203" id="S2n-zD-6sx"/>

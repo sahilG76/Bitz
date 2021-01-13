@@ -359,7 +359,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Lhe-Fo-XJX">
-                                <rect key="frame" x="48.000000000000014" y="347" width="207.33333333333337" height="228"/>
+                                <rect key="frame" x="48.000000000000014" y="309" width="207.33333333333337" height="228"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="2Sv-gt-WkB">
                                         <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="30"/>
@@ -425,7 +425,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hM-Ek-r8m">
-                                <rect key="frame" x="121.66666666666669" y="266" width="147" height="72"/>
+                                <rect key="frame" x="121.66666666666669" y="207" width="147" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="72" id="ZOB-qb-g3u"/>
                                 </constraints>
@@ -434,22 +434,47 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DW0-AB-RuU">
+                                <rect key="frame" x="58.666666666666657" y="545" width="273" height="216"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RK-4V-J3p">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="216"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="EtQ-rP-Uw9"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="[amt]" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2kl-5X-0fl">
+                                        <rect key="frame" x="160" y="91" width="63" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npP-gg-rEf">
+                                        <rect key="frame" x="223.00000000000003" y="83" width="49.999999999999972" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Txr-Kp-MuX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mdL-YH-Nm2" firstAttribute="top" secondItem="p6s-g4-FDz" secondAttribute="top" id="1sV-dZ-ZYv"/>
+                            <constraint firstItem="DW0-AB-RuU" firstAttribute="top" secondItem="Lhe-Fo-XJX" secondAttribute="bottom" constant="8" symbolic="YES" id="6qx-bc-6TD"/>
                             <constraint firstItem="mdL-YH-Nm2" firstAttribute="trailing" secondItem="Txr-Kp-MuX" secondAttribute="trailing" id="8Wv-5K-Lds"/>
-                            <constraint firstItem="Lhe-Fo-XJX" firstAttribute="top" secondItem="2hM-Ek-r8m" secondAttribute="bottom" constant="9" id="CFA-0h-m1R"/>
+                            <constraint firstItem="Lhe-Fo-XJX" firstAttribute="top" secondItem="2hM-Ek-r8m" secondAttribute="bottom" constant="30" id="CFA-0h-m1R"/>
                             <constraint firstAttribute="bottom" secondItem="mdL-YH-Nm2" secondAttribute="bottom" id="Dv1-os-qWj"/>
                             <constraint firstItem="Lhe-Fo-XJX" firstAttribute="leading" secondItem="Txr-Kp-MuX" secondAttribute="leading" constant="48.000000000000014" id="L1i-Gg-WQY"/>
+                            <constraint firstItem="DW0-AB-RuU" firstAttribute="centerX" secondItem="p6s-g4-FDz" secondAttribute="centerX" id="M84-Ze-mJf"/>
                             <constraint firstItem="2hM-Ek-r8m" firstAttribute="centerX" secondItem="p6s-g4-FDz" secondAttribute="centerX" id="Muz-hO-xH0"/>
                             <constraint firstItem="Txr-Kp-MuX" firstAttribute="trailing" secondItem="Lhe-Fo-XJX" secondAttribute="trailing" constant="134.66666666666663" id="RSV-6E-Za9"/>
                             <constraint firstItem="mdL-YH-Nm2" firstAttribute="leading" secondItem="Txr-Kp-MuX" secondAttribute="leading" id="fGG-Nk-SXg"/>
-                            <constraint firstItem="2hM-Ek-r8m" firstAttribute="top" secondItem="Txr-Kp-MuX" secondAttribute="top" constant="222" id="m75-In-LoM"/>
+                            <constraint firstItem="2hM-Ek-r8m" firstAttribute="top" secondItem="Txr-Kp-MuX" secondAttribute="top" constant="163" id="m75-In-LoM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountTextField" destination="2kl-5X-0fl" id="Ss6-Bg-x2k"/>
                         <outlet property="brandLabel" destination="2Sv-gt-WkB" id="3r8-Ne-ivs"/>
                         <outlet property="caloriesLabel" destination="6Dr-HD-6GR" id="Bmb-hd-fT5"/>
                         <outlet property="carbsLabel" destination="olM-26-9lW" id="FYH-88-oaQ"/>
@@ -457,6 +482,8 @@
                         <outlet property="nameLabel" destination="2hM-Ek-r8m" id="ivz-Y8-OMf"/>
                         <outlet property="proteinLabel" destination="K7R-uU-Q2z" id="2nW-oa-ZoZ"/>
                         <outlet property="servingLabel" destination="Udn-rW-1G4" id="fsy-uA-fLw"/>
+                        <outlet property="unitLabel" destination="npP-gg-rEf" id="gdY-wo-wWG"/>
+                        <outlet property="unitPicker" destination="0RK-4V-J3p" id="uyg-Lw-AMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USc-tD-AGW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

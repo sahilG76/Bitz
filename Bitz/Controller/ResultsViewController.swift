@@ -66,6 +66,7 @@ extension ResultsViewController: UITableViewDelegate {
         if let viewController = storyboard?.instantiateViewController(withIdentifier: "NutrientViewController") as? NutrientViewController {
             viewController.results = results
             viewController.index = indexPath.row
+            viewController.food = CustomFoodModel(originalFood: (results?.foods[indexPath.row])!)
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

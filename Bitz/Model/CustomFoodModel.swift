@@ -12,11 +12,11 @@ struct CustomFoodModel {
     
     let name: String
     let brand: String
-    
  
     var unit: Unit
     let isFluid: Bool
     var defAmount: Float
+    var defMacros: Macros
     var amount: Float
     var macros: Macros
     
@@ -26,16 +26,16 @@ struct CustomFoodModel {
         unit = Unit.grams
         isFluid = false
         defAmount = originalFood.grams
+        defMacros = Macros(calories: originalFood.calories,
+                           gramsProtein: originalFood.gramsProtein,
+                           gramsCarbs: originalFood.gramsCarbs,
+                           gramsFat: originalFood.gramsFat)
         amount = defAmount
-        macros = Macros(calories: originalFood.calories,
-                        gramsProtein: originalFood.gramsProtein,
-                        gramsCarbs: originalFood.gramsCarbs,
-                        gramsFat: originalFood.gramsFat)
+        macros = defMacros
     }
     
     mutating func updateQuantities() {
         var gramAmount: Float
-        
         switch unit {
         case .grams:
             gramAmount = amount
@@ -49,19 +49,25 @@ struct CustomFoodModel {
             gramAmount = 28.35 * amount
         }
         
-        macros.calories *= (gramAmount/defAmount)
-        macros.gramsProtein *= (gramAmount/defAmount)
-        macros.gramsCarbs *= (gramAmount/defAmount)
-        macros.gramsFat *= (gramAmount/defAmount)
+        macros.calories = (gramAmount/defAmount) * defMacros.calories
+        macros.gramsProtein = (gramAmount/defAmount) * defMacros.gramsProtein
+        macros.gramsCarbs = (gramAmount/defAmount) * defMacros.gramsCarbs
+        macros.gramsFat = (gramAmount/defAmount) * defMacros.gramsFat
     }
     
+    mutating func setUnit(selectedUnit: Unit) {
+        unit = selectedUnit
+    }
+    
+    //in grams unless setUnit() was called for a different unit before setAmount()
     mutating func setAmount(newAmt: Float) {
         amount = newAmt
+        updateQuantities()
     }
     
 }
 
-enum Unit {
+enum Unit: String, CaseIterable {
     case grams
     case ounces
     case milliliters

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class NutrientViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -21,11 +23,15 @@ class NutrientViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet var amountTextField: UITextField!
     @IBOutlet weak var unitLabel: UILabel!
     
+    @IBOutlet weak var errorLabel: UILabel!
     
     var results: ResultsModel?
     var index: Int?
     var food: CustomFoodModel?
+    var searchString: String?
 
+    let db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -69,6 +75,7 @@ class NutrientViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     
+
     //MARK: - UIPickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -89,15 +96,43 @@ class NutrientViewController: UIViewController, UIPickerViewDataSource, UIPicker
         unitLabel.text = food?.unit.rawValue
     }
     
-    /*
-    // MARK: - Navigation
-
+    
+    // MARK: - Saving Foods and Navigation to Library
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//    }
+    
+    
+    @IBAction func saveFoodPressed(_ sender: Any) {
+        if let userEmail = Auth.auth().currentUser?.email {
+            errorLabel.text = ""
+            food?.sender = userEmail
+            db.collection(K.FStore.collectionName).addDocument(data: [
+                K.FStore.senderField: userEmail,
+                K.FStore.foodField: food as Any
+            ]) { (error) in
+                if let e = error {
+                    print("There was an issue saving this food to Firestore, \(e)")
+                }
+                else {
+                    print("This food has been saved!")
+                }
+            }
+        }
+        else {
+            errorLabel.text = "Must sign-in to save custom food labels"
+            return
+        }
+        if let viewController = storyboard?.instantiateViewController(withIdentifier: "LibraryViewController") as? LibraryViewController {
+//            viewController.results = results
+//            viewController.index = indexPath.row
+//            viewController.food = CustomFoodModel(originalFood: (results?.foods[indexPath.row])!)
+//            viewController.searchString = searchString
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
-    */
 
 }
 

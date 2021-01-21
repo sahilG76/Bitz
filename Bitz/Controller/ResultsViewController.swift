@@ -15,6 +15,7 @@ class ResultsViewController: UIViewController {
     
 //    var foodsManager = ResultsManager()
     var results: ResultsModel?
+    var searchString: String?
 
     
     override func viewDidLoad() {
@@ -22,8 +23,7 @@ class ResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
         resultsTable.dataSource = self
         resultsTable.delegate = self
-        
-        resultsTable.register(UINib(nibName: "ResultCell", bundle: nil), forCellReuseIdentifier: "ResultCell")
+        resultsTable.register(UINib(nibName: "FoodCell", bundle: nil), forCellReuseIdentifier: "FoodCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,7 +53,7 @@ extension ResultsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultsTable.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as! ResultCell
+        let cell = resultsTable.dequeueReusableCell(withIdentifier: "FoodCell", for: indexPath) as! FoodCell
         cell.title.text = results?.foods[indexPath.row].name
         cell.subtitle.text = "\(results?.foods[indexPath.row].brand as! String), \(results?.foods[indexPath.row].gramsPerServing as! String) grams"
         cell.calories.text = String(format: "%.0f", results?.foods[indexPath.row].calories as! CVarArg)
@@ -67,9 +67,8 @@ extension ResultsViewController: UITableViewDelegate {
             viewController.results = results
             viewController.index = indexPath.row
             viewController.food = CustomFoodModel(originalFood: (results?.foods[indexPath.row])!)
+            viewController.searchString = searchString
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
-    
-    
 }

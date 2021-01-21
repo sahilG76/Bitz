@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class SearchViewController: UIViewController {
     
@@ -14,7 +16,7 @@ class SearchViewController: UIViewController {
     @IBOutlet var libraryButton: UIButton!
     @IBOutlet var calculatorButton: UIButton!
     @IBOutlet var userButton: UIButton!
-    @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var errUserLabel: UILabel!
     @IBOutlet var creditLabelLink: UILabel!
     @IBOutlet var creditTextView: UITextView!
     
@@ -27,7 +29,6 @@ class SearchViewController: UIViewController {
         // Do any additional setup after loading the view.
         foodsManager.delegate = self
         setCreditLinkText()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +40,44 @@ class SearchViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let user = Auth.auth().currentUser
+        if let user = user {
+          // The user's ID, unique to the Firebase project.
+          // Do NOT use this value to authenticate with your backend server,
+          // if you have one. Use getTokenWithCompletion:completion: instead.
+          let uid = user.uid
+          let email = user.email
+          let photoURL = user.photoURL
+          var multiFactorString = "MultiFactor: "
+          for info in user.multiFactor.enrolledFactors {
+            multiFactorString += info.displayName ?? "[DispayName]"
+            multiFactorString += " "
+          }
+            errUserLabel.text = "Welcome \(user.displayName!)"
+            print(multiFactorString)
+        }
+        else {
+            errUserLabel.text = ""
+        }
+    }
+    
+    
+    @IBAction func libraryButtonPressed(_ sender: Any) {
+        if Auth.auth().currentUser != nil {
+          // User is signed in.
+            performSegue(withIdentifier: "SearchToLibrary", sender: self)
+          // ...
+        }
+        if Auth.auth().currentUser == nil {
+          // No user is signed in.
+            errUserLabel.text = "Please login to use Saved Foods functionality"
+          // ...
+        }
+    }
+    
+    
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "goToTemp" {
@@ -55,6 +94,7 @@ class SearchViewController: UIViewController {
             let destinationVC = segue.destination as! ResultsViewController
             // Pass the selected object to the new view controller.
             destinationVC.results = searchResults
+            destinationVC.searchString = searchTitle
         }
     }
     
@@ -98,7 +138,7 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchTitle = searchBar.text
-        errorLabel.text = ""
+        errUserLabel.text = ""
         foodsManager.fetchResults(foodName: searchBar.text!)
     }
 }
@@ -113,14 +153,13 @@ extension SearchViewController: ResultsManagerDelegate {
         DispatchQueue.main.async {
 //            self.performSegue(withIdentifier: "goToTemp", sender: self)
             self.performSegue(withIdentifier: "goToResults", sender: self)
-
         }
     }
     
     func didFailWithError(_ error: Error) {
         print(error)
         DispatchQueue.main.async {
-            self.errorLabel.text = "There was an issue with the data retrieved from this query. Please modify your search."
+            self.errUserLabel.text = "There was an issue with the data retrieved from this query. Please modify your search."
         }
     }
 }

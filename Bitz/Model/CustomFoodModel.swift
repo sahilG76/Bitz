@@ -9,6 +9,7 @@
 import Foundation
 
 struct CustomFoodModel {
+    var sender = "example@gmail.com"
     
     let name: String
     let brand: String
